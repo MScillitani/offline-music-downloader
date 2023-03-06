@@ -21,10 +21,10 @@ def button_clicked():
     try:
         youtube_music.download()  # attempts to download YouTube audio
     except IOError:
-        download_label = ttk.Label(root, text="Something went wrong. Please try again.")
-        download_label.pack(expand=False, pady=10)
-    download_label = ttk.Label(root, text="Download Successful")
-    download_label.pack(expand=False, pady=10)
+        error_label = ttk.Label(root, text="Something went wrong. Please try again.")
+        error_label.pack(expand=False, pady=10)
+    success_label = ttk.Label(root, text="Download Successful")
+    success_label.pack(expand=False, pady=10)
 
 
 link_label = ttk.Label(root, text="Enter YouTube URL:")
