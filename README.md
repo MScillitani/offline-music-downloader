@@ -22,6 +22,6 @@ The download speeds are somewhat slower than ideal. But that may be due to my ol
 
 1. Add GUI (complete)
 2. Add better error handling
-3. Add select download foler in GUI
-4. Add additional screens to see and play downloaded music
+3. Add ability to select download location
+4. Add ability to play downloaded music
 

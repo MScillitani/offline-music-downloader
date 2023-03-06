@@ -19,7 +19,7 @@ def button_clicked():
     youtube_music = YouTube(link.get())  # sets to the user-input URL
     youtube_music = youtube_music.streams.get_audio_only()  # specifies audio
     try:
-        youtube_music.download("/home/matt/Music")  # attempts to download YouTube audio
+        youtube_music.download()  # attempts to download YouTube audio
     except IOError:
         download_label = ttk.Label(root, text="Something went wrong. Please try again.")
         download_label.pack(expand=False, pady=20)
