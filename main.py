@@ -1,16 +1,41 @@
 from pytube import YouTube
+import tkinter as tk
+from tkinter import ttk
+from tkinter.messagebox import showerror
 
 
-def download(url):  # download function
-    youtube_music = YouTube(url)  # sets to the user-input URL
+root = tk.Tk()
+root.title("Offline Music Downloader")
+root.geometry('400x250+50+50')
+root.resizable(False, False)
+
+link = tk.StringVar()
+
+
+def button_clicked():
+    if ("youtube" or ".com/") not in link.get().lower():
+        showerror('Invalid URL', 'You must use a valid YouTube URL')
+        return
+    youtube_music = YouTube(link.get())  # sets to the user-input URL
     youtube_music = youtube_music.streams.get_audio_only()  # specifies audio
     try:
-        youtube_music.download()  # attempts to download YouTube audio
+        youtube_music.download("/home/matt/Music")  # attempts to download YouTube audio
     except IOError:
-        print("Something went wrong. Try again.")
-    print("Download successful")
+        download_label = ttk.Label(root, text="Something went wrong. Please try again.")
+        download_label.pack(expand=False, pady=20)
+    download_label = ttk.Label(root, text="Download Successful")
+    download_label.pack(expand=False, pady=20)
 
 
-user_url = input("Enter YouTube URL: ")  # gets YouTube URL from user
-download(user_url)  # downloads audio file to location specified in download function
+link_label = ttk.Label(root, text="Enter YouTube URL:")
+link_label.pack(expand=False, padx=50, pady=40)
 
+link_entry = ttk.Entry(root, textvariable=link)
+link_entry.pack(fill='x', expand=False, padx=20)
+link_entry.focus()
+
+button = ttk.Button(root, text='Download', command=button_clicked)
+
+button.pack(side="bottom", fill='both', expand=False, padx=150, pady=30)
+
+root.mainloop()
