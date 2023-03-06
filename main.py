@@ -22,9 +22,9 @@ def button_clicked():
         youtube_music.download()  # attempts to download YouTube audio
     except IOError:
         download_label = ttk.Label(root, text="Something went wrong. Please try again.")
-        download_label.pack(expand=False, pady=20)
+        download_label.pack(expand=False, pady=10)
     download_label = ttk.Label(root, text="Download Successful")
-    download_label.pack(expand=False, pady=20)
+    download_label.pack(expand=False, pady=10)
 
 
 link_label = ttk.Label(root, text="Enter YouTube URL:")
@@ -39,3 +39,4 @@ button = ttk.Button(root, text='Download', command=button_clicked)
 button.pack(side="bottom", fill='both', expand=False, padx=150, pady=30)
 
 root.mainloop()
+
