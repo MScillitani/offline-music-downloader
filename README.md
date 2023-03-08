@@ -4,7 +4,12 @@ Converts YouTube URLs into audio files so you can listen to music offline.
 
 Made in Python 3.10.6 using Tkinter
 
-## How to use
+## In action
+
+![GIF of application in use](omd_in_action.gif)
+
+
+### How to use
 
  - Run the code, paste the URL of any YouTube video into the input box, and wait a moment. Your download will appear in whatever folder you specify in the download function.
 
