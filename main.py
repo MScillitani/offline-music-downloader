@@ -20,7 +20,7 @@ def button_clicked():
     youtube_music = youtube_music.streams.get_audio_only()  # specifies audio
     try:
         youtube_music.download()  # attempts to download YouTube audio
-    except IOError:
+    except:
         error_label = ttk.Label(root, text="Something went wrong. Please try again.")
         error_label.pack(expand=False, pady=10)
     success_label = ttk.Label(root, text="Download Successful")
